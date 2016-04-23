@@ -1,4 +1,4 @@
-FROM mdjward/php-fpm:latest
+FROM mdjw866/php-fpm:latest
 MAINTAINER M.D.Ward <dev@mattdw.co.uk>
 
 RUN pecl install xdebug-2.4.0 && \
