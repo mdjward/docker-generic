@@ -11,7 +11,7 @@ RUN echo deb "http://httpredir.debian.org/debian jessie-backports main" >> /etc/
     && curl -o /tmp/ant.tar.gz http://mirror.catn.com/pub/apache/ant/binaries/apache-ant-${ANT_VERSION}-bin.tar.gz \
     && tar xzf /tmp/ant.tar.gz --directory /opt/ant --strip-components 1 \
     && rm -f /tmp/ant.tar.gz \
-    && curl -o /opt/ant/lib/AntParallelApply.jar https://github.com/mdjward/ant-parallel-apply-task/releases/download/${ANT_PARALLEL_APPLY_VERSION}/AntParallelApply-${ANT_PARALLEL_APPLY_VERSION}.jar \
+    && curl -L -o /opt/ant/lib/AntParallelApply.jar https://github.com/mdjward/ant-parallel-apply-task/releases/download/${ANT_PARALLEL_APPLY_VERSION}/AntParallelApply-${ANT_PARALLEL_APPLY_VERSION}.jar \
     && ln -s /opt/ant/bin/ant /usr/local/bin/ant
 
 ENV ANT_HOME /opt/ant
